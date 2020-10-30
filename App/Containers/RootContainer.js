@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { View, StatusBar } from 'react-native'
+import { View } from 'react-native'
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import ReduxNavigation from '../Navigation/ReduxNavigation'
 import { connect } from 'react-redux'
 import StartupActions from '../Redux/StartupRedux'
@@ -7,6 +8,7 @@ import ReduxPersist from '../Config/ReduxPersist'
 
 // Styles
 import styles from './Styles/RootContainerStyles'
+import { apply } from '../Themes/OsmiProvider'
 
 class RootContainer extends Component {
   componentDidMount () {
@@ -18,10 +20,11 @@ class RootContainer extends Component {
 
   render () {
     return (
-      <View style={styles.applicationView}>
-        <StatusBar barStyle='light-content' />
-        <ReduxNavigation />
-      </View>
+      <SafeAreaProvider>
+        <View style={apply("flex")}>
+          <ReduxNavigation />
+        </View>
+      </SafeAreaProvider>
     )
   }
 }

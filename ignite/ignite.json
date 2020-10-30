@@ -1,5 +1,5 @@
 {
-  "createdWith": "",
+  "createdWith": "3.5.3",
   "boilerplate": "ignite-andross",
   "examples": "classic",
   "navigation": "react-navigation",
@@ -12,5 +12,6 @@
     "redux": "ignite-andross",
     "saga": "ignite-andross",
     "screen": "ignite-andross"
-  }
+  },
+  "boilerplateVersion": "4.3.0"
 }

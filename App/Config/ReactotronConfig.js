@@ -5,7 +5,7 @@ import { reactotronRedux as reduxPlugin } from 'reactotron-redux'
 import sagaPlugin from 'reactotron-redux-saga'
 
 const reactotron = Reactotron
-    .configure({ name: 'Ignite App' })
+    .configure({ name: 'Ignite App', host: '192.168.100.7' })
     .useReactNative()
     .use(reduxPlugin({ onRestore: Immutable }))
     .use(sagaPlugin())
