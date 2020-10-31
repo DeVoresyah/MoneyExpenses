@@ -1,7 +1,7 @@
 import { connect } from '../../Themes/OsmiProvider'
 
 export default connect({
-  container: 'border-b pb-2 border-dark-600',
+  container: 'border-b pb-px border-dark-600',
   containerPrefix: 'row items-center',
   containerFocus: 'border-primary',
   label: 'text-xs opensans-semi mb-3',
