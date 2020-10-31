@@ -1,3 +1,5 @@
+*.hprof
+
 # OSX
 #
 .DS_Store
