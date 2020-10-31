@@ -62,7 +62,7 @@ DatePicker.propTypes = {
 DatePicker.defaultProps = {
   label: 'Pilih Tanggal',
   name: 'date',
-  value: new Date(),
+  value: new Date().toString(),
   errors: null,
   setFieldValue: (name, value) => alert(`Value for ${name} is ${value}`)
 }

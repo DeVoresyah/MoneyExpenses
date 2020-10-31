@@ -1,32 +1,46 @@
-#  MoneyExpense
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
+<p align="center">
+  <h1>MoneyExpenses App</h1><br>
+  MoneyExpenses App is an open source mobile app about money expenses. This app doesn't have server and RESTful API, only UI since I made this app to complete the test from a startup company.
+</p>
 
-* Standard compliant React Native App Utilizing [Ignite](https://github.com/infinitered/ignite)
+<p align="center">
+    <a href="LICENSE"><img src="https://img.shields.io/github/license/DeVoresyah/MoneyExpenses.svg?style=flat" alt="LICENSE"></a>
+    <a href="https://github.com/DeVoresyah/MoneyExpenses/stargazers"><img src="https://img.shields.io/github/stars/DeVoresyah/MoneyExpenses.svg?style=flat" alt="Stars"></a>
+    <a href="http://standardjs.com/"><img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat" alt="JS Standard"></a>
+    <a href="https://github.com/facebook/react-native"><img src="https://img.shields.io/badge/react--native-0.63.0-blue.svg?style=flat" alt="React Native"></a>
+    <a href="https://github.com/OsmiCSX/osmicsx"><img src="https://img.shields.io/badge/osmicsx-0.5.0-orange.svg?style=flat" alt="OsmiCSX"></a>
+</p>
 
-## :arrow_up: How to Setup
+---
 
-**Step 1:** git clone this repo:
+<p align="center">
+  <img src="https://i.imgur.com/75IS0ov.png" width="239px" height="380px;" />
+  <img src="https://i.imgur.com/Zn9Lbaq.png" width="234px" height="430px;" />
+</p>
 
-**Step 2:** cd to the cloned repo:
+## Prerequisites
+- Xcode or Android Studio installed and exported on your ~/.bash_profile or similar
+- JDK 1.8.x
+- Node >= 12.*
+- react-native-cli
 
-**Step 3:** Install the Application with `yarn` or `npm i`
+## Installation
+open terminal and change directory to your desired folder, then:
+```
+$ git clone git@github.com:DeVoresyah/MoneyExpenses.git YourAppName
+$ cd YourAppName
+$ yarn install
+$ npx pod-install
+```
+## Run Your App
+```
+$ npx react-native run-android
+$ npx react-native run-ios
+```
+## License
+The code is available at [GitHub][home] under the [MIT license][license-url].
 
-
-## :arrow_forward: How to Run App
-
-1. cd to the repo
-2. Run Build for either OS
-  * for iOS
-    * run `npx react-native run-ios`
-  * for Android
-    * Run Genymotion
-    * run `npx react-native run-android`
-
-## :no_entry_sign: Standard Compliant
-
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
-This project adheres to Standard.  Our CI enforces this, so we suggest you enable linting to keep your project compliant during development.
-
+## Additional
 **To Lint on Commit**
 
 This is implemented using [husky](https://github.com/typicode/husky). There is no additional setup needed.
@@ -65,3 +79,13 @@ The `.env` file is ignored by git keeping those secrets out of your repo.
 2. Add your config variables
 3. Follow instructions at [https://github.com/luggit/react-native-config#setup](https://github.com/luggit/react-native-config#setup)
 4. Done!
+
+## Contributors
+Suggestions and contributions are welcome via Pull Requests.
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+| [<img src="https://avatars3.githubusercontent.com/u/8052370" width="100px;"/><br /><sub><b>Rully Ardiansyah</b></sub>](https://github.com/DeVoresyah)<br />[💻](https://github.com/DeVoresyah/MoneyExpenses/commits?author=DeVoresyah "Code") [📖](https://github.com/DeVoresyah/MoneyExpenses/commits?author=DeVoresyah "Documentation") [💬](#question-devoresyah "Answering Questions") [👀](#review-devoresyah "Reviewed Pull Requests") [💡](#example-devoresyah "Examples") |
+| :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+[home]: https://github.com/DeVoresyah/MoneyExpenses
+[license-url]: https://github.com/DeVoresyah/MoneyExpenses/blob/master/LICENSE

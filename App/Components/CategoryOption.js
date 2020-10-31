@@ -61,7 +61,7 @@ CategoryOption.propTypes = {
 // Defaults for props
 CategoryOption.defaultProps = {
   item: {},
-  onSelect: (item) => alert(`${itm?.id} is selected`)
+  onSelect: (item) => alert(`${item?.id} is selected`)
 }
 
 export default memo(CategoryOption)

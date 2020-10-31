@@ -1,5 +1,4 @@
 import React, { useContext, memo } from 'react'
-// import PropTypes from 'prop-types';
 import { TouchableNativeFeedback, TouchableOpacity, Platform, Image, View } from 'react-native'
 import { NavigationContext } from 'react-navigation'
 import { Images } from '../Themes'
@@ -30,16 +29,5 @@ const ButtonAdd = props => {
     </TouchableNativeFeedback>
   )
 }
-
-// // Prop type warnings
-// ButtonAdd.propTypes = {
-//   someProperty: PropTypes.object,
-//   someSetting: PropTypes.bool.isRequired,
-// }
-//
-// // Defaults for props
-// ButtonAdd.defaultProps = {
-//   someSetting: false
-// }
 
 export default memo(ButtonAdd)
