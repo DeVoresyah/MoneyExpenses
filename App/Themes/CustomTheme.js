@@ -1,5 +1,6 @@
 export default {
   // color
+  "backdrop": "rgba(0,0,0, 0.5)",
   "white-soft": "rgba(255,255,255, 0.25)",
   "screen": "#E5E5E5",
   "primary": "#46B5A7",
@@ -9,8 +10,10 @@ export default {
   "dark-300": "#828282",
   "dark-400": "#F2F2F2",
   "dark-500": "#4F4F4F",
+  "dark-600": "#BDBDBD",
 
   // background
+  "bg-backdrop": { backgroundColor: "rgba(0,0,0, 0.5)" },
   "bg-screen": { backgroundColor: "#E5E5E5" },
   "bg-primary": { backgroundColor: "#46B5A7" },
   "bg-secondary": { backgroundColor: "#F54291" },
@@ -19,6 +22,7 @@ export default {
   "bg-dark-300": { backgroundColor: "#828282" },
   "bg-dark-400": { backgroundColor: "#F2F2F2" },
   "bg-dark-500": { backgroundColor: "#4F4F4F" },
+  "bg-dark-600": { backgroundColor: "#BDBDBD" },
 
   // border
   "border-primary": { borderColor: "#46B5A7" },
@@ -28,6 +32,7 @@ export default {
   "border-dark-300": { borderColor: "#828282" },
   "border-dark-400": { borderColor: "#F2F2F2" },
   "border-dark-500": { borderColor: "#4F4F4F" },
+  "border-dark-600": { borderColor: "#BDBDBD" },
 
   // text color
   "text-primary": { color: "#46B5A7" },
@@ -37,12 +42,20 @@ export default {
   "text-dark-300": { color: "#828282" },
   "text-dark-400": { color: "#F2F2F2" },
   "text-dark-500": { color: "#4F4F4F" },
+  "text-dark-600": { color: "#BDBDBD" },
 
   // width & height
+  "w-6": { width: 6 },
+  "h-10": { height: 10 },
+  "w-12": { width: 12 },
+  "h-12": { height: 12 },
   "w-16": { width: 16 },
   "h-16": { height: 16 },
   "w-20": { width: 20 },
   "h-20": { height: 20 },
+  "h-22": { height: 22 },
+  "w-24": { width: 24 },
+  "h-24": { height: 24 },
   "w-27": { width: 27 },
   "h-27": { height: 27 },
   "w-36": { width: 36 },
@@ -66,4 +79,7 @@ export default {
   // top right bottom left
   "right-10": { right: 20 },
   "bottom-10": { bottom: 20 },
+
+  // shadow
+  "shadow-none": { elevation: 0, shadowOpacity: 0 }
 }

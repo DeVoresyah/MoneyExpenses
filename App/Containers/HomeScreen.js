@@ -9,6 +9,9 @@ import {
 import SafeAreaView  from 'react-native-safe-area-view'
 import { connect } from 'react-redux'
 import { Images } from '../Themes'
+import Toast from '../Lib/Toast'
+
+// Components
 import StatusBar from '../Components/StatusBar'
 import CategoryCard from '../Components/CategoryCard'
 import ExpenseItem from '../Components/ExpenseItem'
@@ -81,6 +84,11 @@ const HomeScreen = props => {
     amount: 20000
   }])
 
+  const addExpense = (data) => {
+    setDailyExpenses([data, ...dailyExpenses])
+    Toast('Pengeluaran berhasil ditambahkan!', 'LONG')
+  }
+
   const renderCategoryItem = ({ item, index }) => index === category.length - 1 ? (
     <CategoryCard item={item} cardStyle={apply('mr-5')} />
   ) : (
@@ -91,7 +99,7 @@ const HomeScreen = props => {
 
   return (
     <>
-      <StatusBar backgroundColor={apply('primary')} barStyle='light-content' />
+      <StatusBar backgroundColor={apply('primary')} barStyle='light-content' header={false} />
       <SafeAreaView style={apply('flex bg-screen')} forceInset={{ bottom: 'never' }}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.headerContainer}>
@@ -129,7 +137,9 @@ const HomeScreen = props => {
         </ScrollView>
       </SafeAreaView>
 
-      <ButtonAdd />
+      <ButtonAdd onPress={() => props.navigation.navigate('Add', {
+        onAdd: addExpense
+      })} />
     </>
   )
 }

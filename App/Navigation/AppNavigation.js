@@ -7,11 +7,11 @@ import styles from './Styles/NavigationStyles'
 
 // Manifest of possible screens
 const PrimaryNav = createStackNavigator({
-  HomeScreen: { screen: HomeScreen },
-  AddScreen: { screen: AddScreen },
+  Home: { screen: HomeScreen },
+  Add: { screen: AddScreen },
 }, {
   // Default config for all screens
-  initialRouteName: 'HomeScreen',
+  initialRouteName: 'Home',
   navigationOptions: {
     headerStyle: styles.header
   }

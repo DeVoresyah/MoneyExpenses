@@ -1,6 +1,6 @@
 import { connect } from '../../Themes/OsmiProvider'
 
 export default connect({
-  header: "bg-gray-100",
-  noShadow: "shadow-none border-b-0"
+  container: 'rounded-full p-4',
+  iconBack: 'w-12 h-20'
 })
