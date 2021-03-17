@@ -16,8 +16,9 @@ jobs:
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
-        uses: voxmedia/github-action-slack-notify-build@v1.1.2
+        uses: kpritam/slack-job-status-action@v1
         with:
-          channel_id: ${CHANNEL_ID}
-          status: SUCCESS
-          color: good
+          job-status: ${{ job.status }}
+          channel: money-expenses
+          channel_id: ${{ secrets.CHANNEL_ID }}
+          slack-bot-token: ${{ secrets.SLACK_TOKEN }}
