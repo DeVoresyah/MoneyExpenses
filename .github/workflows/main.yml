@@ -31,7 +31,7 @@ jobs:
         if: success()
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-        uses: voxmedia/github-action-slack-notify-build@v1
+        uses: voxmedia/github-action-slack-notify-build@v1.1.2
         with:
           channel: money-expenses
           status: SUCCESS
@@ -41,7 +41,7 @@ jobs:
         if: failure()
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-        uses: voxmedia/github-action-slack-notify-build@v1
+        uses: voxmedia/github-action-slack-notify-build@v1.1.2
         with:
           channel: money-expenses
           status: FAILED
