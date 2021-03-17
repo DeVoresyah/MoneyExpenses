@@ -1,0 +1,57 @@
+name: Github Actions
+
+on:
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    container: reactnativecommunity/react-native-android
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Envinfo
+        run: npx envinfo
+
+      - name: Install Modules
+        run: |
+          yarn install
+          npx jetify
+
+      - name: Build App
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleRelease
+
+      - name: Slack Success Notif
+        if: success()
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        uses: voxmedia/github-action-slack-notify-build@v1
+        with:
+          channel: money-expenses
+          status: SUCCESS
+          color: good
+
+      - name: Slack Failed Notif
+        if: failure()
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        uses: voxmedia/github-action-slack-notify-build@v1
+        with:
+          channel: money-expenses
+          status: FAILED
+          color: danger
+
+      - name: Send App to Slack
+        if: success()
+        env:
+          ARM64_V8A: ${{ secrets.ARM64_V8A }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+        run: |
+          curl -v -F file=@${ARM64_V8A} -F channels=${CHANNEL_ID} -F token=${SLACK_TOKEN} https://slack.com/api/files.upload
