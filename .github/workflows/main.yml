@@ -31,9 +31,10 @@ jobs:
         if: success()
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
         uses: voxmedia/github-action-slack-notify-build@v1.1.2
         with:
-          channel: money-expenses
+          channel_id: ${CHANNEL_ID}
           status: SUCCESS
           color: good
 
@@ -41,9 +42,10 @@ jobs:
         if: failure()
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
         uses: voxmedia/github-action-slack-notify-build@v1.1.2
         with:
-          channel: money-expenses
+          channel_id: ${CHANNEL_ID}
           status: FAILED
           color: danger
 
