@@ -1,0 +1,23 @@
+name: Test Slack
+
+on:
+  push:
+    branches: [ test ]
+
+  workflow_dispatch:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Notify
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
+        uses: voxmedia/github-action-slack-notify-build@v1.1.2
+        with:
+          channel_id: ${CHANNEL_ID}
+          status: SUCCESS
+          color: good
