@@ -7,18 +7,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  notify:
+  deploy:
     runs-on: ubuntu-latest
+    container: reactnativecommunity/react-native-android
     steps:
       - uses: actions/checkout@v2
 
       - name: Notify
-        env:
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
-        uses: kpritam/slack-job-status-action@v1
-        with:
-          job-status: ${{ job.status }}
-          channel: money-expenses
-          channel_id: ${{ secrets.CHANNEL_ID }}
-          slack-bot-token: ${{ secrets.SLACK_TOKEN }}
+        run: |
+          chmod +x .slack-notification
+          ./.slack-notification

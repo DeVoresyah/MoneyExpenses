@@ -1,0 +1,11 @@
+MESSAGE="*Deploy to ${GITHUB_REF##*/}*
+
+$(date +'%A, %d %B %Y %H:%M:%S')
+
+The Money Expenses application was successfully deployed with the ${github.run_id} release in the ${github.workflow} workflow :rocket: :rocket: :rocket:
+
+SHA: ${github.sha}
+
+_don't forget coding today_  :wink:"
+
+curl -v -F channel=$CHANNEL_ID -F token=$SLACK_TOKEN -F text="${MESSAGE}" https://slack.com/api/chat.postMessage
