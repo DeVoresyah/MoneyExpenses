@@ -18,5 +18,6 @@ jobs:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
         run: |
+          echo $SLACK_TOKEN CHANNEL_ID
           chmod +x .slack-notification
           ./.slack-notification
