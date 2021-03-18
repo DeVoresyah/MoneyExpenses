@@ -56,4 +56,4 @@ jobs:
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
         run: |
-          curl -v -F file=@${ARM64_V8A} -F channels=${CHANNEL_ID} -F token=${SLACK_TOKEN} https://slack.com/api/files.upload
+          curl -v -F file=@$ARM64_V8A -F channels=$CHANNEL_ID -F token=$SLACK_TOKEN https://slack.com/api/files.upload
