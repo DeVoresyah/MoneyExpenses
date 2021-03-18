@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    container: reactnativecommunity/react-native-android
+#    container: reactnativecommunity/react-native-android
     steps:
       - uses: actions/checkout@v2
 
@@ -19,5 +19,6 @@ jobs:
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
         run: |
           echo ${SLACK_TOKEN} ${CHANNEL_ID}
-          chmod +x .slack-notification
-          ./.slack-notification
+          ${SLACK_TOKEN} ${CHANNEL_ID}
+#          chmod +x .slack-notification
+#          ./.slack-notification

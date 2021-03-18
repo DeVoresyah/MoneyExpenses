@@ -8,4 +8,4 @@ SHA: ${GITHUB_SHA}
 
 _don't forget coding today_  :wink:"
 
-curl -v -F channel=$CHANNEL_ID -F token=$SLACK_TOKEN -F text="${MESSAGE}" https://slack.com/api/chat.postMessage
+curl -v -F channel=${CHANNEL_ID} -F token=${SLACK_TOKEN} -F text="${MESSAGE}" https://slack.com/api/chat.postMessage
