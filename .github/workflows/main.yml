@@ -1,4 +1,4 @@
-name: Github Actions
+name: Build & Deploy
 
 on:
   push:
@@ -27,27 +27,14 @@ jobs:
           chmod +x gradlew
           ./gradlew assembleRelease
 
-      - name: Slack Success Notif
+      - name: Slack Notify
         if: success()
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
-        uses: voxmedia/github-action-slack-notify-build@v1.1.2
-        with:
-          channel_id: ${CHANNEL_ID}
-          status: SUCCESS
-          color: good
-
-      - name: Slack Failed Notif
-        if: failure()
-        env:
-          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
-        uses: voxmedia/github-action-slack-notify-build@v1.1.2
-        with:
-          channel_id: ${CHANNEL_ID}
-          status: FAILED
-          color: danger
+          run: |
+            chmod +x .slack-notification
+            ./.slack-notification
 
       - name: Send App to Slack
         if: success()
